@@ -58,6 +58,13 @@
         justify-content: center;
         opacity: 0;
         transition: .3s;
+
+        @include tablet-style() {
+            position: static;
+            background: none;
+            padding: 15px 0 0 0;
+            opacity: 1;
+        }
     }
 
     &__img:hover &__overlay-card-img {
@@ -74,6 +81,15 @@
         @include flex-center-space-between();
         padding: 0 13px;
         cursor: pointer;
+
+        @include tablet-style() {
+            border: 1px solid #333;
+            color: #333;
+
+            .products__icon-add-cart {
+                fill: #333;
+            }
+        }
     }
 
     &__button-add-cart:hover {
@@ -86,7 +102,12 @@
     }
 
     &__info-product {
+        
         padding: 20px;
+
+        @include tablet-style() {
+            text-align: center;
+        }
     }
 
     &__caption-info {
