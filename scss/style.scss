@@ -1,0 +1,25 @@
+
+@import './general';
+@import './variables';
+@import './mixins';
+@import './reset';
+
+// Strart import blocks desctop
+@import './blocks/header';
+@import './blocks/navigation';
+@import './blocks/brand';
+@import './blocks/subcaption';
+@import './blocks/stocks';
+@import './blocks/products';
+@import './blocks/advantages';
+@import './blocks/footer';
+@import './blocks/name-page';
+@import './blocks/registration';
+@import './blocks/perks';
+@import './blocks/cart';
+// End import blocks desctop
+
+// Start import page style
+@import './pages/product';
+@import './pages/catalog';
+// Start import page style

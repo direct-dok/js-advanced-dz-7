@@ -1,0 +1,50 @@
+.perks {
+
+    &__caption {
+        font-weight: 300;
+        font-size: 24px;
+        text-transform: uppercase;
+        line-height: 29px;
+        color: #000000;
+
+        @include tablet-style() {
+            @include font($font-size: 16px, $font-weight: 300, $line-height: 19px);
+        }
+    }
+    
+    &__description {
+        @include font($font-size: 24px, $font-weight: 300, $line-height: 29px);
+        color: #000000;
+        margin: 20px 0;
+
+        @include tablet-style() {
+            @include font($font-size: 16px, $font-weight: 300, $line-height: 19px);
+            margin: 32px 0 20px 0;
+        }
+    }
+    
+    &__list-item {
+        position: relative;
+        @include font($font-size: 24px, $font-weight: 300, $line-height: 29px);
+        color: #000000;
+        margin: 0 0 16px 0;
+        padding: 0 0 0 43px;
+
+        @include tablet-style() {
+            @include font($font-size: 16px, $font-weight: 300, $line-height: 19px);
+        }
+    }
+    
+    &__list-item::before {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 16px;
+        left: 0;
+        top: calc(50% - 10px);
+        background: url(../img/registration-marker-list.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+    }
+}
+

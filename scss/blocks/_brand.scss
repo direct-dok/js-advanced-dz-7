@@ -1,0 +1,87 @@
+.brand {
+    background: $pink-color;
+
+    &__wrapper {
+
+        max-width: 1600px;
+        margin: 0 auto;
+        display: flex;
+
+        @include mobile-landscape-style() {
+            height: 363px;
+        }
+    }
+
+    &__img {
+        width: 50%;
+        height: auto;
+
+        @include mobile-landscape-style() {
+            display: none;
+        }
+    }
+    
+    &__text {
+        @include flex-align-items-center();
+        width: 50%;
+        padding: 0 0 0 84px;
+        text-transform: uppercase;
+
+        @include tablet-style() {
+            padding: 0 0 0 39px;
+        }
+
+        @include mobile-landscape-style() {
+            width: 100%;
+            @include flex-align-items-center();
+            justify-content: center;
+            padding: 0;
+        }
+    }
+    
+    &__caption-block {
+        position: relative;
+        padding: 4px 0 4px 28px;
+
+        @include mobile-landscape-style() {
+            padding: 0 0 0 28px;
+        }
+    }
+    
+    &__caption-block::before {
+        content: "";
+        position: absolute;
+        width: 12px;
+        height: 100%;
+        left: 0;
+        top: 0;
+        background: $pink-color-caption;
+    }
+    
+    &__caption {
+        @include font-size-weight(48px, 900);
+        margin: 0 0 5px 0;
+
+        @include tablet-style() {
+            @include font-size-weight(44px, 900);
+        }
+
+        @include mobile-landscape-style() {
+            @include font(38px, 900, 34px);
+        }
+        
+    }
+    
+    &__subcaption {
+        @include font-size-weight(28px, 700);
+
+        @include tablet-style() {
+            @include font-size-weight(24px, 700);
+        }
+
+        @include mobile-landscape-style() {
+            @include font-size-weight(20px, 700);
+        }
+    }
+}
+

@@ -1,0 +1,60 @@
+.navigation {
+    position: fixed;
+    right: 0;
+    top: 75px;
+    height: 100%;
+    background: #fff;
+    box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+    transition: .3s;
+    transform: translate3d(250px,0,0);
+    overflow-y: auto;
+    z-index: 3;
+    
+    &__wrapper {
+        position: relative;
+        width: 232px;
+        padding: 37px 34px;
+        box-sizing: border-box;
+    }
+
+    &__open-navigation {
+        transform: translate3d(0,0,0);
+    }
+
+    &__title {
+        @include font(14px, 700, 17px);
+        text-transform: uppercase;
+    }
+
+	&__menu {
+        margin: 24px 0 0 0;
+    }
+	&__item-menu { }
+	&__link-menu {
+        @include font-size-line-height(14px, 17px);
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $pink-color-caption;
+    }
+	&__submenu {
+        margin: 12px 0 20px 20px;
+    }
+    &__item-submenu {
+        margin: 0 0 11px 0;
+    }
+	&__link-submenu {
+        @include font-size-line-height(14px, 17px);
+        color: #6F6E6E;
+        text-decoration: none;
+    }
+
+    &__close-nav {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+
+        .cart__delete-icon-product {
+            position: static;
+        }
+    }
+}
