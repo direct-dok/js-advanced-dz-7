@@ -36,7 +36,7 @@
                     </svg>
                 </div>
                 <div class="header__right-block">
-                    <button type="button" class="header__button-menu">
+                    <button type="button" @click="showNavigation = true" class="header__button-menu">
                         <svg width="32" height="23" viewBox="0 0 32 23" xmlns="http://www.w3.org/2000/svg"
                             class="header__icon">
                             <path d="M0 23V20.31H32V23H0ZM0 12.76V10.07H32V12.76H0ZM0 2.69V0H32V2.69H0Z" fill="#E8E8E8"
@@ -52,6 +52,9 @@
                         </svg>
                     </a>
                     <a href="/cart.html" class="header__cart-link">
+                        <span class="header__cont-product-cart">
+                            <span class="header__number-product" v-if="countProductsBasket">{{ countProductsBasket }}</span>
+                        </span>
                         <svg width="32" height="29" viewBox="0 0 32 29" xmlns="http://www.w3.org/2000/svg"
                             class="header__icon">
                             <path
@@ -61,10 +64,21 @@
 
                     </a>
                 </div>
-                <nav class="header__wrapper-menu navigation">
+                <nav v-bind:class="{'header__wrapper-menu': true, 'navigation': true,'navigation__open-navigation': showNavigation}">
                     <div class="navigation__wrapper">
                         <div class="navigation__title">Menu</div>
                         <ul class="navigation__menu">
+                            <li class="navigation__item-menu">
+                                <a href="" class="navigation__link-menu">Pages</a>
+                                <ul class="navigation__submenu">
+                                    <li class="navigation__item-submenu"><a href="/catalog.html"
+                                            class="navigation__link-submenu">Catalog</a></li>
+                                    <li class="navigation__item-submenu"><a href="/cart.html"
+                                            class="navigation__link-submenu">Basket</a></li>
+                                    <li class="navigation__item-submenu"><a href="/registration.html"
+                                            class="navigation__link-submenu">Registration</a></li>
+                                </ul>
+                            </li>
                             <li class="navigation__item-menu">
                                 <a href="" class="navigation__link-menu">Man</a>
                                 <ul class="navigation__submenu">
@@ -111,7 +125,7 @@
                                 </ul>
                             </li>
                         </ul>
-                        <div class="navigation__close-nav">
+                        <div class="navigation__close-nav" @click="showNavigation = false">
                             <svg width="12" height="12" viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg"
                                 class="cart__delete-icon-product header__icon">
                                 <path
@@ -132,8 +146,17 @@
         </section>
         <section class="cart width-1600">
             <div class="cart__product">
-                <ul class="cart__product-items">
-                    <li class="cart__product-item">
+                
+
+                    <basket :cartproducts="cartProduts" v-if="totalPrice" @count-cart-action="controlCountBasket" @delete-product-basket="deleteProductBasket"></basket>
+
+                    <div class="cart__not-product" v-else>
+                        <h2 class="cart__basket-title">Товаров в корзине нет</h2>
+                        <img src="img/basket.png" alt="basket" class="cart__basket-img">
+                    </div>
+
+                    <!--<ul class="cart__product-items"> 
+                        <li class="cart__product-item">
                         <img src="./img/cart-product-1.jpg" width="263" height="306" alt="Mango people t-shirt">
                         <div class="cart__info-product">
                             <h2 class="cart__name-product">Mango people t-shirt</h2>
@@ -166,6 +189,8 @@
                                 fill="#575757" class="header__icon-hover" />
                         </svg>
                     </li>
+
+
 
                     <li class="cart__product-item">
                         <img src="./img/cart-product-2.jpg" width="263" height="306" alt="Mango people t-shirt">
@@ -200,7 +225,7 @@
                                 fill="#575757" class="header__icon-hover" />
                         </svg>
                     </li>
-                </ul>
+                </ul> -->
                 <div class="cart__control-wrapper-button">
                     <button class="cart__control-button">Clear shopping cart</button>
                     <button class="cart__control-button">Continue shopping</button>
@@ -232,11 +257,11 @@
                     <div class="cart__total-info">
                         <div class="cart__sub-total">
                             <span class="cart__sub-property">Sub total</span>
-                            <span class="cart__sub-value">$900</span>
+                            <span class="cart__sub-value">{{ totalPrice }} &#36;</span>
                         </div>
                         <div class="cart__grand-total">
                             <span class="cart__grand-property">Grand total</span>
-                            <span class="cart__grand-value">$900</span>
+                            <span class="cart__grand-value">{{ totalPrice }} &#36;</span>
                         </div>
                     </div>
                     <button class="cart__checkout-button">Proceed to checkout</button>
@@ -313,6 +338,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/nav-animate.js"></script>
     <script src="js/components/Catalog.js"></script>
+    <script src="js/components/Basket.js"></script>
     <script src="js/main.js"></script>
 </body>
 
