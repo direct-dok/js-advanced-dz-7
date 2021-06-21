@@ -1,0 +1,134 @@
+.registration {
+    padding: 64px 16px 96px 16px;
+    display: flex;
+    justify-content: space-between;
+
+    @include tablet-style() {
+        padding: 40px 16px 96px 16px;
+    }
+
+    @include mobile-landscape-style() {
+        flex-direction: column;
+    }
+
+    &__wrapper-form {
+        max-width: 360px;
+        padding: 0 24px 0 0;
+
+        @include tablet-style() {
+            flex: 1 1 50%;
+        }
+
+        @include mobile-landscape-style() {
+            flex: 1 1 100%;
+            max-width: 100%;
+            padding: 0;
+        }
+    }
+    
+    &__perks {
+        max-width: 650px;
+
+        @include tablet-style() {
+            flex: 1 1 50%;
+        }
+
+        @include mobile-landscape-style() {
+            margin: 40px 0 0 0;
+        }
+    }
+    
+    &__legend-form {
+        @include font(16px, 300, 19px);
+        color: #222222;
+        margin: 0 0 20px 0;
+    }
+    
+    &__field {
+        box-sizing: border-box;
+        width: 100%;
+        height: 45px;
+        padding: 0 17px;
+        border: 1px solid #A4A4A4;
+    }
+    
+    &__field::placeholder {
+        @include font(13px, 300, 16px);
+        color: #B1B1B1;
+    }
+    
+    &__wrapper-field {
+        margin: 0 0 20px 0;
+
+        &--flex {
+            display: flex;
+        }
+    }
+    
+    
+    
+    &__wrapper-radio {
+        @include flex-align-items-center();
+        margin: 0 20px 0 0;
+    }
+    
+    &__radio {
+        width: 17px;
+        height: 17px;
+        border: 1px solid #A4A4A4;
+        box-sizing: border-box;
+        margin: 0 10px 0 0;
+    }
+
+    &__radio:checked {
+        border-color: $pink-hover-color;
+    }
+
+    &__radio:checked::before {
+        content: '';
+        display: block;
+        width: 17px;
+        height: 17px;
+        background: $pink-hover-color;
+        @include border-radius(50%);
+    }
+    
+    &__label-radio {
+        @include font(11px, 300, 13px);
+        color: #000000;
+    }
+    
+    &__field--password {
+        margin: 0 0 16px 0;
+    }
+    
+    &__label-password {
+        @include font(13px, 300, 16px);
+        color: #B1B1B1;
+    }
+    
+    &__submit {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 167px;
+        height: 50px;
+        padding: 0 29px;
+        border: none;
+        background: #F16D7F;
+        @include font-size-line-height(14px, 17px);
+        text-transform: uppercase;
+        color: #FFFFFF;
+        cursor: pointer;
+        transition: .3s;
+    }
+
+    &__submit:hover {
+        background: $pink-hover-color;
+    }
+    
+    &__wrapper-button {
+        margin: 20px 0 0 0;
+    }
+}
+

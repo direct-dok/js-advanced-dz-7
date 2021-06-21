@@ -1,0 +1,295 @@
+.cart {
+    padding: 96px 16px 128px 16px;
+    display: flex;
+    justify-content: space-between;
+
+    @include tablet-style() {
+        padding: 59px 16px 128px 16px;
+        flex-direction: column;
+    }
+
+    @include mobile-landscape-style() {
+
+    }
+
+    &__product {
+        max-width: 652px;
+        margin: 0 30px 0 0;
+
+        @include tablet-style() {
+            max-width: 100%;
+            margin: 0;
+        }
+    }
+
+    &__product-item {
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        @include box-shadow(17px 19px 24px rgba(0, 0, 0, 0.13));
+        margin: 0 0 40px 0;
+
+        img {
+            @include mobile-landscape-style() {
+                width: 40%;
+                height: auto;
+            }
+        }
+
+        @include mobile-landscape-style() {
+            margin: 0 0 32px 0;
+        }
+    }
+
+   &__product-item:last-child {
+        margin: 0;
+    }
+
+    &__delete-icon-product {
+        position: absolute;
+        top: 28px;
+        right: 22px;
+        cursor: pointer;
+
+        @include mobile-landscape-style() {
+            width: 10px;
+            height: 10px;
+            top: 17px;
+            right: 12px;
+        }
+    }
+
+    &__info-product {
+        padding: 22px 40px 22px 31px;
+        flex: 1 1 auto;
+
+        @include mobile-landscape-style() {
+            padding: 12px 20px 17px 17px;
+        }
+    }
+
+    &__name-product {
+        max-width: 262px;
+        @include font-size-line-height(24px, 29px);
+        text-transform: uppercase;
+
+        @include mobile-landscape-style() {
+            @include font-size-line-height(16px, 19px);
+        }
+    }
+
+    &__items-info-product {
+        margin: 42px 0 0 0;
+
+        @include mobile-landscape-style() {
+            margin: 25px 0 0 0;
+        }
+    }
+
+    &__item-info-product {
+        margin: 0 0 6px 0;
+        @include font-size-line-height(22px, 26px);
+
+        @include mobile-landscape-style() {
+            @include font-size-line-height(14px, 17px);
+            margin: 0 0 4px 0;
+        }
+    }
+
+    &__property-product, 
+    &__value-product {
+        color: #575757;
+    }
+
+    &__value-product--price {
+        color: $pink-color-caption;
+    }
+
+    &__quantity-product {
+        @include font-size-line-height(18px, 22px);
+        color: #656565;
+        text-align: center;
+        width: 43px;
+        height: 24px;
+        margin: 0 0 0 24px;
+        border: 1px solid #EAEAEA;
+
+        @include mobile-landscape-style() {
+            width: 24px;
+            height: 15px; 
+            @include font-size-line-height(10px, 12px);
+        }
+    }
+
+    &__control-wrapper-button {
+        margin: 72px -5px 0 -5px;
+        @include flex-center-space-between();
+
+        @include tablet-style() {
+            justify-content: space-evenly;
+            
+        }
+
+        @include mobile-landscape-style() {
+            margin: 30px 0 0 0;
+        }
+    }
+
+    &__control-button {
+        @include font(14px, 300, 17px);
+        color: #000000;
+        text-transform: uppercase;
+        height: 49px;
+        max-width: 250px;
+        margin: 0 5px 0 5px;
+        padding: 0 39px;
+        background: #fff;
+        border: 1px solid #A4A4A4;
+        transition: .3s;
+        cursor: pointer;
+
+        @include tablet-style() {
+            justify-content: space-evenly;
+        }
+
+        @include mobile-landscape-style() {
+            flex: 1 1 50%;
+            text-transform: none;
+            @include font-size-line-height(12px, 14px);
+            color: #575757;
+            height: 32px;
+            padding: 0;
+        }
+    }
+
+    &__control-button:hover {
+        background: $pink-hover-color;
+        color: #fff;
+        border-color: $pink-hover-color;
+    }
+
+    &__form-adress-total-price {
+        flex: 0 1 359px;
+
+        @include tablet-style() {
+            display: flex;
+            flex: 1 1 auto;
+            justify-content: space-between;
+            margin: 64px -7px 0 -7px;
+        }
+
+        @include mobile-landscape-style() {
+            flex-direction: column;
+        }
+    }
+
+    &__form-adress {
+        padding: 13px 0 0 0;
+
+        @include tablet-style() {
+            flex: 1 1 50%;
+            margin: 0 7px;
+        }
+    }
+
+    &__form-caption {
+        @include font(16px, 300, 19px);
+        text-transform: uppercase;
+    }
+
+    &__wrapper-field-form {
+        margin: 20px 0 0 0;
+    }
+
+    &__label-form {
+        display: none;
+    }
+
+    &__input-form {
+        box-sizing: border-box;
+        width: 100%;
+        height: 45px;
+        padding: 0 0 0 17px;
+        border: 1px solid #A4A4A4;
+
+    }
+
+    &__input-form::placeholder {
+        @include font(13px, 300, 16px);
+        color: $black-color;
+    }
+
+    &__wrapper-button-form {
+        margin: 23px 0 0 0;
+    }
+
+    &__submit-button-form {
+        @include font(11px, 300, 13px);
+        text-transform: uppercase;
+        color: #A4A4A4;
+        width: 101px;
+        height: 35px;
+        background: #fff;
+        border: 1px solid #A4A4A4;
+        cursor: pointer;
+    }
+
+    &__total-price {
+        margin: 58px 0 0 0;
+        padding: 43px;
+        background: #F5F3F3;
+
+        @include tablet-style() {
+            flex: 1 1 50%;
+            margin: 52px 7px 0 7px;
+        }
+    }
+
+    &__total-info {
+        border-bottom: 1px solid #E2E2E2;
+        padding: 0 0 21px 0;
+        margin: 0 0 17px 0;
+    }
+
+    &__sub-total {
+        @include font(11px, 300, 13px);
+        text-transform: uppercase;
+        color: #4A4A4A;
+        text-align: right;
+    }
+
+    &__sub-property {
+        margin: 0 20px 0 0;
+    }
+
+    &__grand-total {
+        @include font(16px, 300, 19px);
+        text-transform: uppercase;
+        text-align: right;
+        color: #222222;
+        margin: 12px 0 0 0;
+    }
+
+    &__grand-value {
+        font-weight: 700;
+        color: $pink-color-caption;
+        margin: 0 0 0 20px;
+    }
+
+    &__checkout-button {
+        @include font(16px, 300, 19px);
+        color: #fff;
+        text-transform: uppercase;
+        width: 100%;
+        height: 50px;
+        background: $pink-color-caption;
+        border: none;
+        cursor: pointer;
+
+        @include mobile-landscape-style() {
+            @include font(13px, 300, 16px);
+        }
+    }
+
+
+}

@@ -1,0 +1,54 @@
+@mixin flex-center-space-between() {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin flex-align-items-center() {
+    display: flex;
+    align-items: center;
+}
+
+@mixin font($font-size: 14px, $font-weight: 400, $line-height: 14px) {
+    font: {
+        size: $font-size;
+        weight: $font-weight;
+    }
+    line-height: $line-height;
+}
+
+@mixin font-size-weight($size: 14px, $weight: 400) {
+    font: {
+        size: $size;
+        weight: $weight;
+    }
+}
+
+@mixin font-size-line-height($size: 14px, $line-height: 17px) {
+    font-size: $size;
+    line-height: $line-height;
+}
+
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    border-radius: $radius;
+}
+
+@mixin box-shadow($code-shadow) {
+    -webkit-box-shadow: $code-shadow;
+    -moz-box-shadow: $code-shadow;
+    box-shadow: $code-shadow;
+}
+
+@mixin tablet-style() {
+    @media (max-width: $max-tablet-width) {
+        @content;
+    }
+}
+
+@mixin mobile-landscape-style() {
+    @media screen and (max-width: $max-mobile-landscape-width) {
+        @content;
+    }
+}
