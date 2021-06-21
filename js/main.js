@@ -2,70 +2,73 @@ let app = new Vue({
     el: '.app',
     data: {
         products: [],
-        cartProduts: [
-            {
-                description: "A teen manga series by Eiichiro Oda, serialized in Weekly Shonen Jump (Shueisha).",
-                id_product: 126,
-                img: "https://a.lmcdn.ru/img600x866/P/U/PU053EMMJIW8_14094290_1_v2_2x.jpg",
-                price: 3140,
-                product_name: "Костюм спортивный ftblPLAY Tracksuit PUMA",
-                quantity: 4
-            },
-            {
-                description: "Evolved design ideal for sports or everyday wear. Outstanding quick-dry capability while remaining smooth to the touch.",
-                id_product: 127,
-                img: "https://a.lmcdn.ru/img600x866/M/P/MP002XM1HLCH_14423201_1_v1_2x.jpg",
-                price: 1299,
-                product_name: "Рубашка Zolla",
-                quantity: 1
-            },
-            {
-                description: "Combines a natural texture with comfort. Updated this T-shirt with details that make it even more flattering.UPF40",
-                id_product: 130,
-                img: "https://a.lmcdn.ru/img600x866/M/P/MP002XM249D2_8275579_1_v2.jpeg",
-                price: 2990,
-                product_name: "Брюки спортивные Jets",
-                quantity: 1
-            }, 
-            {
-                description: "Simple and versatile. Stays dry, giving it a comfortable and dry feeling against the skin.",
-                id_product: 128,
-                img: "https://a.lmcdn.ru/img600x866/M/P/MP002XM1ZROK_12855842_1_v1_2x.jpg",
-                price: 2990,
-                product_name: "Рубашка Bawer",
-                quantity: 1
-            }
-        ],
-        // cartProduts: [], 
-        // countCartProducts: 0, 
-        showNavigation: false
-        // totalPrice: 0
+        cartProduts: []
     },
     methods: {
-        getProducts: function (url) { // Получаем товары с сервера
+        getProducts: function(url) { // Получаем товары с сервера
             return fetch(url)
                 .then(result => result.json());
         },
+        checkStorage: function() {
+            if(!localStorage.getItem('products')) {
+                this.getProducts('https://raw.githubusercontent.com/direct-dok/json-fetch/main/products.json')
+                    .then(res => {
+                        localStorage.setItem('products', JSON.stringify(res))
+                        this.products = JSON.parse(localStorage.getItem('products'))
+                    });
+                
+            } else {
+                this.products = JSON.parse(localStorage.getItem('products'))
+            }
+
+            if(!localStorage.getItem('cartProducts')) {
+                this.getProducts('https://raw.githubusercontent.com/direct-dok/json-fetch/main/cartProducts.json')
+                    .then(res => {
+                        localStorage.setItem('cartProducts', JSON.stringify(res))
+                        this.cartProduts = JSON.parse(localStorage.getItem('cartProducts'))
+                    });
+                
+            } else {
+                this.cartProduts = JSON.parse(localStorage.getItem('cartProducts'))
+            }
+        },
+        getStorageCartProduct: function() { // Получить товары корзины из LocalStorage
+            return JSON.parse(localStorage.getItem('cartProducts'))
+        },
+        StorageCartProduct: function(str) { // Записать обновленный список товаров в LocalStorage
+            localStorage.setItem('cartProducts', str)
+        },
         addCartProducts: function (idProduct) { // Добавление товара в корзину, с проверкой наличия товара в корзине, если товар есть, то увеличиваем количество товара в массиве
-            this.products.forEach(el => {
+            let cartStorage = JSON.parse(localStorage.getItem('cartProducts'))
+            let noProduct = true;
+            cartStorage.forEach(el => {
                 if (el.id_product == idProduct) {
-                    let resultCheck = this.checkItemCart(idProduct);
+                    let resultCheck = this.checkItemCart(cartStorage, idProduct);
                     if (resultCheck.length) {
-                        this.cartProduts[resultCheck[1]].quantity++;
-                    } else {
-                        el.quantity = 1;
-                        this.cartProduts.push(el);
-                        // this.countCartProducts = this.cartProduts.length;
-                        // this.countGoods();
-                    }
+                        cartStorage[resultCheck[1]].quantity++;
+                        this.StorageCartProduct(JSON.stringify(cartStorage))
+                        this.cartProduts = this.getStorageCartProduct()
+                        noProduct = false
+                    } 
                 }
             });
 
+            if(noProduct) {
+                this.products.forEach(el => {
+                    if(el.id_product == idProduct) {
+                        el.quantity = 1;
+                        cartStorage.push(el);
+                        this.StorageCartProduct(JSON.stringify(cartStorage))
+                        this.cartProduts = this.getStorageCartProduct()
+                    }
+                })
+            }
+            console.log(cartStorage)
             console.log(this.cartProduts);
         },
-        checkItemCart: function (idProduct) { // Проверяет, есть ли товар в корзине
+        checkItemCart: function (arr, idProduct) { // Проверяет, есть ли товар в корзине
             let result = [];
-            this.cartProduts.forEach((el, index) => {
+            arr.forEach((el, index) => {
                 if (el.id_product == idProduct) {
                     result.push(true);
                     result.push(index);
@@ -74,24 +77,34 @@ let app = new Vue({
             return result;
         },
         controlCountBasket: function (action, id) {
+            let cartStorage = JSON.parse(localStorage.getItem('cartProducts'))
+
             if (!+action) {
-                this.cartProduts.forEach(el => {
+                cartStorage.forEach(el => {
                     if (el.id_product == id) {
                         (el.quantity < 2) ? false: el.quantity--
                     }
                 })
+                this.StorageCartProduct(JSON.stringify(cartStorage))
+                this.cartProduts = this.getStorageCartProduct()
             } else {
-                this.cartProduts.forEach(el => {
+                cartStorage.forEach(el => {
                     if (el.id_product == id) {
                         el.quantity++
                     }
                 })
+                this.StorageCartProduct(JSON.stringify(cartStorage))
+                this.cartProduts = this.getStorageCartProduct()
             }
         }, 
         deleteProductBasket: function(id) { // функция для удаления продукта из корзины
-            console.log(id)
-            let arrPosition = this.searchElementId(id, this.cartProduts)
-            this.cartProduts.splice(arrPosition, 1)
+            let cartStorage = JSON.parse(localStorage.getItem('cartProducts')) // Получаем список товаров корзины из LocalStorage
+            let arrPosition = this.searchElementId(id, cartStorage) // Получаем позицию товара в массиве товаров из LocalStorage
+            console.log(cartStorage[arrPosition])
+            cartStorage.splice(arrPosition, 1)
+            console.log(cartStorage)
+            this.StorageCartProduct(JSON.stringify(cartStorage))
+            this.cartProduts = this.getStorageCartProduct()
         },
         searchElementId(id, arr) { // Функция хелпер, для нахождения номера элемента в массиве
             let result = null;
@@ -102,9 +115,6 @@ let app = new Vue({
         }
     },
     computed: {
-        countProductsBasket: function () {
-            return this.cartProduts.length;
-        },
         totalPrice: function () {
             console.log(this.cartProduts)
             if (!this.cartProduts.length == 0) {
@@ -118,7 +128,6 @@ let app = new Vue({
         }
     },
     mounted() {
-        this.getProducts('https://raw.githubusercontent.com/direct-dok/json-fetch/main/products.json')
-            .then(res => this.products = res);
+        this.checkStorage()
     }
 })
