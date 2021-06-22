@@ -24,10 +24,7 @@
 
                     <basket :cartproducts="cartProduts" v-if="cartProduts.length" @count-cart-action="controlCountBasket" @delete-product-basket="deleteProductBasket"></basket>
 
-                    <div class="cart__not-product" v-else>
-                        <h2 class="cart__basket-title">Товаров в корзине нет</h2>
-                        <img src="img/basket.png" alt="basket" class="cart__basket-img">
-                    </div>
+                    <no-cart-product v-else></no-cart-product>
 
                 
             </div>
@@ -47,6 +44,7 @@
     <script src="js/components/Name-page.js"></script>
     <script src="js/components/Footer.js"></script>
     <script src="js/components/Basket-total-price.js"></script>
+    <script src="js/components/No-cart-product.js"></script>
     <script src="js/main.js"></script>
 </body>
 
