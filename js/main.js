@@ -115,17 +115,7 @@ let app = new Vue({
         }
     },
     computed: {
-        totalPrice: function () {
-            console.log(this.cartProduts)
-            if (!this.cartProduts.length == 0) {
-                let result = 0;
-                this.cartProduts.forEach(el => result += el.price * el.quantity)
-                return result
-            } else {
-                return 0
-            }
-
-        }
+        
     },
     mounted() {
         this.checkStorage()

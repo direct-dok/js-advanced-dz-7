@@ -22,54 +22,18 @@
             <div class="cart__product">
                 
 
-                    <basket :cartproducts="cartProduts" v-if="totalPrice" @count-cart-action="controlCountBasket" @delete-product-basket="deleteProductBasket"></basket>
+                    <basket :cartproducts="cartProduts" v-if="cartProduts.length" @count-cart-action="controlCountBasket" @delete-product-basket="deleteProductBasket"></basket>
 
                     <div class="cart__not-product" v-else>
                         <h2 class="cart__basket-title">Товаров в корзине нет</h2>
                         <img src="img/basket.png" alt="basket" class="cart__basket-img">
                     </div>
 
-                <div class="cart__control-wrapper-button">
-                    <button class="cart__control-button">Clear shopping cart</button>
-                    <button class="cart__control-button">Continue shopping</button>
-                </div>
+                
             </div>
-            <div class="cart__form-adress-total-price">
-                <form action="#" class="cart__form-adress">
-                    <fieldset>
-                        <legend class="cart__form-caption">Shipping adress</legend>
-                        <div class="cart__wrapper-field-form">
-                            <label class="cart__label-form">Indicate your country</label>
-                            <input type="text" name="country" placeholder="Bangladesh" class="cart__input-form">
-                        </div>
-                        <div class="cart__wrapper-field-form">
-                            <label class="cart__label-form">State</label>
-                            <input type="text" name="state" placeholder="State" class="cart__input-form">
-                        </div>
-                        <div class="cart__wrapper-field-form">
-                            <label class="cart__label-form">Postcode / Zip</label>
-                            <input type="text" name="postcode" placeholder="Postcode / Zip" class="cart__input-form">
-                        </div>
-                        <div class="cart__wrapper-button-form">
-                            <button type="submit" class="cart__submit-button-form">Get a quote</button>
-                        </div>
-                    </fieldset>
-                </form>
+            
+            <basket-total-price :cartpsroducts="cartProduts"></basket-total-price>
 
-                <div class="cart__total-price">
-                    <div class="cart__total-info">
-                        <div class="cart__sub-total">
-                            <span class="cart__sub-property">Sub total</span>
-                            <span class="cart__sub-value">{{ totalPrice }} &#36;</span>
-                        </div>
-                        <div class="cart__grand-total">
-                            <span class="cart__grand-property">Grand total</span>
-                            <span class="cart__grand-value">{{ totalPrice }} &#36;</span>
-                        </div>
-                    </div>
-                    <button class="cart__checkout-button">Proceed to checkout</button>
-                </div>
-            </div>
         </section>
     </main>
 
@@ -82,6 +46,7 @@
     <script src="js/components/Header.js"></script>
     <script src="js/components/Name-page.js"></script>
     <script src="js/components/Footer.js"></script>
+    <script src="js/components/Basket-total-price.js"></script>
     <script src="js/main.js"></script>
 </body>
 
