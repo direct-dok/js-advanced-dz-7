@@ -11,4 +11,3 @@ closeNav.addEventListener('click', function() {
 })
 
 
-

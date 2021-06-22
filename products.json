@@ -1,0 +1,156 @@
+[
+    {
+      "id_product": 124,
+      "product_name": "Поло oodji",
+      "description": "The Paris design team, led by Christophe Lemaire, created a new collection of LifeWear using innovative fabrics and modern designs.",
+      "price": 599, 
+      "img": "https://a.lmcdn.ru/img600x866/M/P/MP002XM1H61W_13366844_1_v1.jpeg"
+    },
+    {
+      "id_product": 125,
+      "product_name": "Кардиган Wake",
+      "description": "Our Roger Federer logo cap is back, featuring a range of basic colors.",
+      "price": 2124, 
+      "img": "https://a.lmcdn.ru/img600x866/M/P/MP002XM1H7N2_13542379_1_v1_2x.jpg"
+    },
+    {
+      "id_product": 126,
+      "product_name": "Костюм спортивный ftblPLAY Tracksuit PUMA",
+      "description": "A teen manga series by Eiichiro Oda, serialized in Weekly Shonen Jump (Shueisha).",
+      "price": 3140, 
+      "img": "https://a.lmcdn.ru/img600x866/P/U/PU053EMMJIW8_14094290_1_v2_2x.jpg"
+    },
+    {
+      "id_product": 127,
+      "product_name": "Рубашка Zolla",
+      "description": "Evolved design ideal for sports or everyday wear. Outstanding quick-dry capability while remaining smooth to the touch.",
+      "price": 1299, 
+      "img": "https://a.lmcdn.ru/img600x866/M/P/MP002XM1HLCH_14423201_1_v1_2x.jpg"
+    },
+    {
+      "id_product": 128,
+      "product_name": "Рубашка Bawer",
+      "description": "Simple and versatile. Stays dry, giving it a comfortable and dry feeling against the skin.",
+      "price": 2990, 
+      "img": "https://a.lmcdn.ru/img600x866/M/P/MP002XM1ZROK_12855842_1_v1_2x.jpg"
+    },
+    {
+      "id_product": 129,
+      "product_name": "Костюм спортивный Techstripe Tricot Suit CL",
+      "description": "100% Supima® cotton for a high-quality feel. A basic item that goes with any look.",
+      "price": 4990, 
+      "img": "https://a.lmcdn.ru/img600x866/P/U/PU053EMMJJZ5_13624002_1_v1_2x.jpg"
+    },
+    {
+      "id_product": 130,
+      "product_name": "Брюки спортивные Jets",
+      "description": "Combines a natural texture with comfort. Updated this T-shirt with details that make it even more flattering.UPF40",
+      "price": 2990, 
+      "img": "https://a.lmcdn.ru/img600x866/M/P/MP002XM249D2_8275579_1_v2.jpeg"
+    },
+    {
+      "id_product": 131,
+      "product_name": "Джинсы - JAN",
+      "description": "Natural cotton that is easy to coordinate. They look sharp, but have stress-free comfort.",
+      "price": 3599, 
+      "img": "https://a.lmcdn.ru/img600x866/H/E/HE002EMMMFQ1_13104979_1_v1.jpg"
+    },
+    {
+      "id_product": 132,
+      "product_name": "Пиджак",
+      "description": "As comfortable as a sweatshirt but with a classic look. A new type of jeans that you will find yourself wearing again and again.",
+      "price": 3490, 
+      "img": "https://a.lmcdn.ru/img600x866/M/P/MP002XM1HFP1_13833056_1_v1.jpeg"
+    },
+    {
+      "id_product": 133,
+      "product_name": "Шорты для плавания",
+      "description": "The natural material is comfy and provides a light and fresh look. Relaxed fit with elastic around the waist.",
+      "price": 999, 
+      "img": "https://a.lmcdn.ru/img600x866/M/P/MP002XM1HM5T_14231937_1_v1_2x.jpg"
+    },
+    {
+      "id_product": 134,
+      "product_name": "Брюки спортивные CORE18 SW PNT",
+      "description": "A single layer with a natural feel of natural material. Simple and easy to coordinate.",
+      "price": 2389, 
+      "img": "https://a.lmcdn.ru/img600x866/A/D/AD002EMEEHK4_8018922_1_v1.jpg"
+    },
+    {
+      "id_product": 135,
+      "product_name": "Футболка",
+      "description": "Rustic check pocket stitching. A short-sleeve T-shirt brimming with natural style.",
+      "price": 799, 
+      "img": "https://a.lmcdn.ru/img600x866/M/P/MP002XM1K9UA_11490206_1_v1_2x.jpg"
+    },
+    {
+      "id_product": 136,
+      "product_name": "Брюки oodji",
+      "description": "Lightweight, cool to the touch, and easy to move around in.",
+      "price": 799, 
+      "img": "https://a.lmcdn.ru/img600x866/M/P/MP002XM24VSO_11287581_1_v1.jpeg"
+    },
+    {
+      "id_product": 137,
+      "product_name": "Пальто Topman",
+      "description": "Super smooth 100% Supima® cotton Shirt! Versatile crew-neck style.",
+      "price": 6490, 
+      "img": "https://a.lmcdn.ru/img600x866/T/O/TO030EMLDBT0_12358003_1_v1.jpg"
+    },
+    {
+      "id_product": 138,
+      "product_name": "Дубленка Topman",
+      "description": "Combines the smooth, comfortable feel of AIRism with the look of cotton. It can also be worn on its own as a T-shirt.",
+      "price": 6690, 
+      "img": "https://a.lmcdn.ru/img600x866/T/O/TO030EMLMEK3_12701177_1_v1_2x.jpg"
+    },
+    {
+      "id_product": 139,
+      "product_name": "Куртка Burton Menswear London",
+      "description": "The boa on the inside is soft and warm. The cut makes your feet look slim.",
+      "price": 4070, 
+      "img": "https://a.lmcdn.ru/img600x866/B/U/BU014EMKTDI9_12072329_1_v1.jpg"
+    },
+    {
+      "id_product": 140,
+      "product_name": "Куртка джинсовая Join Life Pull&Bear",
+      "description": "Incredibly lightweight and comfortable. Comfortable, high performance shorts that are great for any sport.",
+      "price": 2999, 
+      "img": "https://a.lmcdn.ru/img600x866/I/X/IX001XM00B0C_13681862_1_v1.jpeg"
+    },
+    {
+      "id_product": 141,
+      "product_name": "Костюм Laconi",
+      "description": "Updated to have a relaxed silhouette. Casual and trendy.",
+      "price": 12990, 
+      "img": "https://a.lmcdn.ru/img600x866/M/P/MP002XM1Q1JL_10436074_1_v1_2x.jpg"
+    },
+    {
+      "id_product": 143,
+      "product_name": "Майка домашняя Mark Formelle",
+      "description": "Sweat dries super-fast to keep you feeling fresh and comfortable. Short and easy to wear.",
+      "price": 599, 
+      "img": "https://a.lmcdn.ru/img600x866/M/P/MP002XM0MSS2_12158400_1_v1_2x.jpg"
+    },
+    {
+      "id_product": 144,
+      "product_name": "Кроссовки RETRORUNNER adidas",
+      "description": "Made from 100% high-quality linen. Cool with a touch of sophistication.",
+      "price": 3390, 
+      "img": "https://a.lmcdn.ru/img600x866/A/D/AD002AMLVQJ3_14103271_1_v1.jpg"
+    },
+    {
+      "id_product": 145,
+      "product_name": "Кеды GRAND COURT BASE adidas",
+      "description": "A high-quality classic polo shirt Improved the cut and mobility.",
+      "price": 2999, 
+      "img": "https://a.lmcdn.ru/img600x866/A/D/AD002AMLVPR8_12883975_1_v2.jpg"
+    },
+    {
+      "id_product": 146,
+      "product_name": "Кеды Thomas Munz",
+      "description": "These relaxed pants are soft and comfortable. Short and easy to wear.",
+      "price": 3999, 
+      "img": "https://a.lmcdn.ru/img600x866/M/P/MP002XM20VFO_11393357_1_v1.jpg"
+    }
+  ]
