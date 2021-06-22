@@ -100,9 +100,7 @@ let app = new Vue({
         deleteProductBasket: function(id) { // функция для удаления продукта из корзины
             let cartStorage = JSON.parse(localStorage.getItem('cartProducts')) // Получаем список товаров корзины из LocalStorage
             let arrPosition = this.searchElementId(id, cartStorage) // Получаем позицию товара в массиве товаров из LocalStorage
-            console.log(cartStorage[arrPosition])
             cartStorage.splice(arrPosition, 1)
-            console.log(cartStorage)
             this.StorageCartProduct(JSON.stringify(cartStorage))
             this.cartProduts = this.getStorageCartProduct()
         },

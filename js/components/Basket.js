@@ -12,7 +12,7 @@ Vue.component('basket', {
             }
         }, 
         deleteProduct: function(event) {
-            this.$emit('delete-product-basket', event.target.dataset.id)
+            this.$emit('delete-product-basket', event.currentTarget.dataset.id)
         }
     }, 
     template: `
